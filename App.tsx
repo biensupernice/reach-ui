@@ -9,7 +9,7 @@ const Navigator = createStackNavigator(
     PromptQuestionnaire: { screen: PromptQuestionnaire }
   },
   {
-    initialRouteName: "HomeScreen",
+    initialRouteName: "PromptQuestionnaire",
     headerMode: "none",
     navigationOptions: { swipeEnabled: true, gesturesEnabled: true }
   }
