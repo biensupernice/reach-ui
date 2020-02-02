@@ -1,5 +1,5 @@
 import React from "react";
-import { View, ScrollView } from "react-native";
+import { View, ScrollView, Button } from "react-native";
 import styled from "styled-components";
 
 // Components
@@ -9,6 +9,12 @@ const Container = styled(View)`
   justify-content: center;
   align-items: center;
   padding-vertical: 30px;
+`;
+const SubmitButton = styled(Button)`
+  background-color: #000;
+  width: 100px;
+  height: 20px;
+  color: red;
 `;
 
 type Question = {
@@ -27,6 +33,10 @@ export function PromptQuestionnaire() {
       text: "example question"
     }
   ];
+
+  function handleOnPress() {
+    console.log("Submitted questionnaire");
+  }
   return (
     <ScrollView>
       <Container>
@@ -34,6 +44,7 @@ export function PromptQuestionnaire() {
           return <QuestionnaireCard key={index} text={question.text} />;
         })}
       </Container>
+      <SubmitButton title="Grade" onPress={handleOnPress} />
     </ScrollView>
   );
 }
