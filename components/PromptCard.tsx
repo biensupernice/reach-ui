@@ -54,15 +54,12 @@ type PromptCardProps = {
   secondaryColor: string; // hex
   companyLogo: string; // url
   numberOfQuestions: number;
+  onPress: any;
 };
 
 export function PromptCard(props: PromptCardProps) {
-  function handleOnPress() {
-    console.log("Pressed Prompt " + props.company);
-  }
-
   return (
-    <TouchableOpacity onPress={handleOnPress}>
+    <TouchableOpacity onPress={props.onPress}>
       <LinearGradient
         colors={[props.primaryColor, props.secondaryColor]}
         style={{ marginVertical: 10, borderRadius: 10 }}

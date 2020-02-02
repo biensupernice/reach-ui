@@ -10,9 +10,13 @@ const Card = styled(View)`
   background-color: #fff;
   border-radius: 10px;
   margin-vertical: 10px;
+  justify-content: center;
+  align-items: center;
 `;
 
-const CardQuestion = styled(Text)``;
+const CardQuestion = styled(Text)`
+  font-size: 20px;
+`;
 
 type QuestionCardProps = {
   text: string;

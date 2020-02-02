@@ -12,15 +12,19 @@ const SScrollView = styled(ScrollView)`
 const SView = styled(View)`
   justify-content: center;
   align-items: center;
-  padding-vertical: 30px;
+  padding-bottom: 10px;
 `;
 
 const SHeader = styled(View)`
-  padding: 10px;
+  margin-bottom: 10px;
+  margin-top: 30px;
 `;
 const SHeaderTitle = styled(Text)`
   font-weight: bold;
-  font-size: 20px;
+  font-size: 25px;
+  text-align: center;
+  color: #121212;
+  text-decoration: underline;
 `;
 
 type Prompt = {
@@ -33,7 +37,11 @@ type Prompt = {
   textColor: string;
 };
 
-export function HomeScreen() {
+type Question = {
+  text: string;
+};
+
+export function HomeScreen(props: any) {
   const prompts: Prompt[] = [
     {
       company: "Microsoft",
@@ -75,6 +83,26 @@ export function HomeScreen() {
     }
   ];
 
+  const questions: Question[] = [
+    {
+      text: "Tell me about a time you felt a little gay."
+    },
+    {
+      text: "example question"
+    },
+    {
+      text: "example question"
+    }
+  ];
+
+  function handleOnPress(prompt: Prompt) {
+    props.navigation.navigate("PromptQuestionnaire", {
+      questions,
+      primaryColor: prompt.primaryColor,
+      secondaryColor: prompt.secondaryColor
+    });
+  }
+
   return (
     <SScrollView>
       <SHeader>
@@ -92,6 +120,7 @@ export function HomeScreen() {
               secondaryColor={prompt.secondaryColor}
               numberOfQuestions={prompt.numberOfQuestions}
               textColor={prompt.textColor}
+              onPress={() => handleOnPress(prompt)}
             />
           );
         })}
