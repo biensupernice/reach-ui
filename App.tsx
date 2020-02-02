@@ -14,7 +14,7 @@ const Navigator = createStackNavigator(
     ResultScreen: { screen: ResultScreen }
   },
   {
-    initialRouteName: "HomeScreen",
+    initialRouteName: "ResultScreen",
     headerMode: "none",
 
     navigationOptions: { swipeEnabled: true, gesturesEnabled: true }

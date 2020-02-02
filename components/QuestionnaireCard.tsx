@@ -33,8 +33,7 @@ export function QuestionnaireCard(props: QuestionCardProps) {
           shadowOpacity: 0.4,
           shadowRadius: 6,
           shadowColor: "rgba(0,0,0,0.15)",
-          shadowOffset: { height: 5, width: 0 },
-          background: "linear-gradient(#e66465, #9198e5);"
+          shadowOffset: { height: 5, width: 0 }
         }}
       >
         <CardQuestion>{props.text}</CardQuestion>
