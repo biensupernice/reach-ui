@@ -1,5 +1,5 @@
 import React from "react";
-import { View, ScrollView } from "react-native";
+import { View, ScrollView, Text } from "react-native";
 import styled from "styled-components";
 
 // Components
@@ -13,6 +13,14 @@ const SView = styled(View)`
   justify-content: center;
   align-items: center;
   padding-vertical: 30px;
+`;
+
+const SHeader = styled(View)`
+  padding: 10px;
+`;
+const SHeaderTitle = styled(Text)`
+  font-weight: bold;
+  font-size: 20px;
 `;
 
 type Prompt = {
@@ -69,6 +77,9 @@ export function HomeScreen() {
 
   return (
     <SScrollView>
+      <SHeader>
+        <SHeaderTitle>Questionnaire set</SHeaderTitle>
+      </SHeader>
       <SView>
         {prompts.map((prompt: Prompt, index: any) => {
           return (
